@@ -1,0 +1,28 @@
+{% extends "header.html" %}
+{% load static %}
+
+{% block content %} 
+
+{% load crispy_forms_tags %}         
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        body{
+            background-image: url({% static 'ai.jpg' %});background-size:100% 100%;background-attachment: fixed;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+<!--Register--> 
+<div class="container py-5">
+	<h1><font color="white">註冊</font></h1>
+	<form method="POST"> {% csrf_token %}
+		{% csrf_token %}
+		<font color="white">{{ form|crispy }}</font>                    
+		<button class="btn btn-primary" type="submit">註冊</button>
+	</form>
+	<p class="text-center"><font color="white">如果你已經有帳號了</font> , <a href="/accounts/login/">點選登入</a></p>
+</div>
+
+{% endblock %}

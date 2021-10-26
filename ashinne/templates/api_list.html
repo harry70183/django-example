@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style type="text/css">
+            body{
+                background-image: url({% static 'ai3.jpg' %});background-size:100% 100%;background-attachment: fixed;
+            }
+    </style>
+    <title>GOOGLE CLOUD VISION API TEST</title>
+    <!-- <script type="text/javascript" src="../src/index.js"></script> -->
+    <script src="{% static 'main.js' %}"></script>
+  </head>
+  <body>
+    <font color="white"><h2 align="center">Google Vision API</h1></font>  
+    <div id="div-button">
+      <button type="button" id="btn-shutter">Take Pic</button>
+      <select name="detection-type" id="detection-type">
+        <option value="1">LABEL_DETECTION</option>視覺API
+        <option value="2">TEXT_DETECTION</option>
+        <option value="3">SAFE_SEARCH_DETECTION</option>
+      </select>
+      <br>
+      <br>
+    </div>
+    <div id="div-image">
+      <video id="camera" width="320" height="240"></video>
+      <canvas id="pic" width="320" height="240"></canvas>
+    </div>
+    <div id="div-result">
+      <form name="form">
+        <textarea name="textarea" rows="5" cols="50">result...</textarea>
+      </form>
+    </div>
+  </body>
+</html>
