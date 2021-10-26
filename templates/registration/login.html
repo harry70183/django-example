@@ -1,0 +1,19 @@
+{% extends "header.html" %}
+
+{% block content %}      
+
+{% load crispy_forms_tags %}
+
+<!--Login--> 
+<div class="container py-5">
+  <h1>Login</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ login_form|crispy }}
+    <button class="btn btn-primary" type="submit">登入</button>
+  </form>
+  <p class="text-center">沒有帳號? <a href="/accounts/register/">建立帳號</a>.</p>
+</div>
+
+{% endfor %}   
+                          
